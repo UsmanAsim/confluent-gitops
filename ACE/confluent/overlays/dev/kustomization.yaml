@@ -2,13 +2,6 @@ resources:
   - ../../base
 patches:
   - path: connect.yaml
-  - path: controlcenter.yaml
-  - path: kafka.yaml
-  - path: KafkaRestProxy.yaml
-  - path: KsqlDB.yaml
-  - path: schema.yaml
-  - path: zookeeper.yaml
-
 
   - target:
       kind: Connect
