@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: confluent-bootstrap
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: gitops
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argocd/confluent/
+    repoURL: https://github.com/UsmanAsim/confluent-gitops.git
+    targetRevision: main

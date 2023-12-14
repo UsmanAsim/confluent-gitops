@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: confluent-applicationset
+spec:
+  destination:
+    name: ''
+    namespace: gitops
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ACE/confluent/overlays/dev/
+    repoURL: 'https://github.com/UsmanAsim/confluent-gitops.git'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+project: default
+source:
+  repoURL: 'https://github.com/UsmanAsim/confluent-gitops.git'
+  path: ACE/confluent/overlays/dev/
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: dev
