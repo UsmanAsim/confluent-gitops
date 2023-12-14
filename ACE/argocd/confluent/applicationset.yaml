@@ -16,7 +16,7 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-project: default
+project: confluent
 source:
   repoURL: 'https://github.com/UsmanAsim/confluent-gitops.git'
   path: ACE/confluent/overlays/dev/
