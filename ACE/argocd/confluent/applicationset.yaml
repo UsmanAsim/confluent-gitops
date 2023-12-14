@@ -23,4 +23,4 @@ source:
   targetRevision: HEAD
 destination:
   server: 'https://kubernetes.default.svc'
-  namespace: dev
+  namespace: confluent
