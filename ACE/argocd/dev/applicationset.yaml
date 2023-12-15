@@ -13,7 +13,7 @@ spec:
     metadata:
       name: '{{microservice}}'
     spec:
-      project: default
+      project: confluent
       source:
         repoURL: https://github.com/UsmanAsim/confluent-gitops.git
         targetRevision: HEAD

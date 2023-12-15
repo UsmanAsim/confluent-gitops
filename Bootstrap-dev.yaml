@@ -8,7 +8,7 @@ spec:
   destination:
     namespace: gitops
     server: https://kubernetes.default.svc
-  project: default
+  project: confluent
   source:
     path: argocd/dev/
     repoURL: https://github.com/UsmanAsim/confluent-gitops.git
