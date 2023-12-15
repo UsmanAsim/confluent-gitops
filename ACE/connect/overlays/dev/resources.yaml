@@ -7,8 +7,8 @@ spec:
   podTemplate:
     resources:
       requests:
-        cpu: 500m
-        memory: 512Mi
+        cpu: 200m
+        memory: 256Mi
     probe:
       liveness:
         periodSeconds: 10
