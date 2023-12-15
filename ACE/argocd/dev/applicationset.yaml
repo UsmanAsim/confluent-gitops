@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: confluent-applicationset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/UsmanAsim/confluent-gitops.git
+        revision: HEAD
+        files:
+        - path: "ACE/**/overlays/**/dev_config.json"
+  template:
+    metadata:
+      name: '{{microservice}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/UsmanAsim/confluent-gitops.git
+        targetRevision: HEAD
+        path: "ACE/{{folder}}/overlays/dev/"
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: confluent
+      syncPolicy:
+        automated:
+          prune: true  
+          selfHeal: true
