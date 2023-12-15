@@ -10,6 +10,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: argocd/confluent/
+    path: argocd/dev/
     repoURL: https://github.com/UsmanAsim/confluent-gitops.git
     targetRevision: main
