@@ -3,4 +3,5 @@ resources:
 patches:
   - path: connect.yaml
   - path: replica.yaml
+  - path: resources.yaml
 
