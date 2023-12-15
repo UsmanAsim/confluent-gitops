@@ -1,29 +1,10 @@
 apiVersion: platform.confluent.io/v1beta1
-kind: Connect
+kind: Kafka
 metadata:
-  name: connect
+  name: kafka
   namespace: confluent
 spec:
   replicas: 1
   image:
-    application: confluentinc/cp-server-connect:newimage
+    application: confluentinc/cp-server:7.4.0
     init: confluentinc/confluent-init-container:2.6.0
-  configOverrides:
-    server:
-      - config.storage.replication.factor=1
-      - offset.storage.replication.factor=1
-      - status.storage.replication.factor=1
-  podTemplate:
-    resources:
-      requests:
-        cpu: 100m
-        memory: 256Mi
-    probe:
-      liveness:
-        periodSeconds: 10
-        failureThreshold: 5
-        timeoutSeconds: 500 
-    podSecurityContext:
-      fsGroup: 1000
-      runAsUser: 1000
-      runAsNonRoot: true 
