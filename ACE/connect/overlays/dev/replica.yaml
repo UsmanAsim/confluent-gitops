@@ -4,4 +4,4 @@ metadata:
   name: connect
   namespace: confluent
 spec:
-  replicas: 1
+  replicas: 3
